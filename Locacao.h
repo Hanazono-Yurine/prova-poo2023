@@ -1,0 +1,26 @@
+#ifndef LOCACAO_H
+#define LOCACAO_H
+
+#include <string>
+
+using namespace std;
+
+// COMPLETE A CLASSE
+class Locacao  {
+    public:
+        Locacao(string endereco, double preco, int vencimento);
+        virtual ~Locacao();
+
+        string getEndereco();
+        double getPreco();
+        void setPreco(double novo);
+        int getVencimento();
+        virtual double calcularTotal(int diasAntecipados) = 0;
+        virtual void imprimir() = 0;
+
+    private:
+        string endereco = "";
+        double preco = 0.0;
+        int vencimento = 0;
+};
+#endif // LOCACAO_H
